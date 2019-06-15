@@ -16,13 +16,13 @@
 
 import random
 
-test_data = {}
+test_data = []
 
 def create_test_data():
     number_of_people = random.randint(10, 60)
     print(number_of_people)
     for x in range(number_of_people):
-        arrival_time = str(random.randint(0, 30))
+        arrival_time = random.randint(0, 30)
         coming_or_going = random.randint(1, 2)
         if coming_or_going == 1:
             get_on = 1
@@ -30,12 +30,16 @@ def create_test_data():
         elif coming_or_going == 2:
             get_on = random.randint(2, 10)
             get_off = 1
-        test_data.update({arrival_time: (get_on, get_off)})
+        test_data.append((arrival_time, get_on, get_off))
+    print(len(test_data))
     return(test_data)
 
 
 
+
+
 print(create_test_data())
+
 
 
 # for x in range(10):
